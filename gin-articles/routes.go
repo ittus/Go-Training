@@ -13,6 +13,13 @@ func initializeRoutes() {
 		userRoutes.POST("/login", performLogin)
 		userRoutes.GET("/logout", logout)
 	}
-	router.GET("/article/view/:article_id", getArticle)
+	articleRoutes := router.Group("/article")
+	{
+		// route from Part 1 of the tutorial
+		articleRoutes.GET("/view/:article_id", getArticle)
 
+		articleRoutes.GET("/create", showArticleCreationPage)
+
+		articleRoutes.POST("/create", createArticle)
+	}
 }
