@@ -6,11 +6,11 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"os/user"
 	"strings"
 
 	"google.golang.org/appengine/datastore"
 	"google.golang.org/appengine/log"
+	"google.golang.org/appengine/user"
 )
 
 type User struct {
